@@ -76,3 +76,7 @@ app.use('/', createProxyMiddleware({
 app.listen(PORT, () => {
     console.log(`Servidor rodando com sucesso na porta ${PORT}`);
 });
+
+div.html-div {
+    display: none !important;
+}
